@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 80% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(58, 88, 255, 0.18), transparent 60%),
+      linear-gradient(180deg, #05060a 0%, #07080f 100%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-brand-500/40 text-white;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  }
+  .glass-strong {
+    @apply bg-white/[0.06] backdrop-blur-2xl border border-white/15;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #c7d2fe 30%,
+      #a5b4fc 50%,
+      #c4b5fd 70%,
+      #ffffff 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-x 12s ease infinite;
+  }
+  .gradient-border {
+    position: relative;
+    isolation: isolate;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(58, 88, 255, 0.6), rgba(139, 92, 246, 0.4), rgba(34, 211, 238, 0.4));
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-white shadow-glow transition;
+    background: linear-gradient(135deg, #3a58ff 0%, #8b5cf6 100%);
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-glowViolet;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-slate-200 border border-white/15 hover:bg-white/5 transition;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-slate-300;
+  }
+  .card {
+    @apply glass rounded-2xl p-6 transition hover:bg-white/[0.05] hover:-translate-y-1;
+  }
+  .input {
+    @apply w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30 transition;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-2;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
