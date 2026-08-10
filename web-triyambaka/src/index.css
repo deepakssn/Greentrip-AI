@@ -11,9 +11,9 @@
   body {
     @apply bg-ink-950 text-slate-200 font-sans antialiased;
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
-      radial-gradient(900px 500px at 0% 10%, rgba(58, 88, 255, 0.18), transparent 60%),
-      linear-gradient(180deg, #05060a 0%, #07080f 100%);
+      radial-gradient(1200px 600px at 80% -10%, rgba(174, 196, 121, 0.20), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(124, 150, 68, 0.16), transparent 60%),
+      linear-gradient(180deg, #090b07 0%, #0c0f09 100%);
     background-attachment: fixed;
   }
   ::selection {
@@ -36,9 +36,9 @@
     background-image: linear-gradient(
       90deg,
       #ffffff 0%,
-      #c7d2fe 30%,
-      #a5b4fc 50%,
-      #c4b5fd 70%,
+      #d5e4b6 28%,
+      #aec479 50%,
+      #e0b25a 72%,
       #ffffff 100%
     );
     background-size: 200% 100%;
@@ -54,7 +54,7 @@
     inset: 0;
     padding: 1px;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(58, 88, 255, 0.6), rgba(139, 92, 246, 0.4), rgba(34, 211, 238, 0.4));
+    background: linear-gradient(135deg, rgba(174, 196, 121, 0.6), rgba(124, 150, 68, 0.4), rgba(224, 178, 90, 0.4));
     -webkit-mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
@@ -63,8 +63,8 @@
     pointer-events: none;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-white shadow-glow transition;
-    background: linear-gradient(135deg, #3a58ff 0%, #8b5cf6 100%);
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-ink-950 shadow-glow transition;
+    background: linear-gradient(135deg, #aec479 0%, #97b158 100%);
   }
   .btn-primary:hover {
     @apply -translate-y-0.5 shadow-glowViolet;

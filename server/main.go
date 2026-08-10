@@ -351,7 +351,7 @@ func buildHTMLBody(c ContactRequest, ip string) string {
 	msg := strings.ReplaceAll(esc(c.Message), "\n", "<br/>")
 	return fmt.Sprintf(`<!doctype html><html><body style="background:#f6f7fb;margin:0;padding:24px">
 <table role="presentation" style="max-width:560px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e5e7eb" cellspacing="0" cellpadding="0">
-  <tr><td style="padding:20px 24px;background:linear-gradient(135deg,#3a58ff,#8b5cf6);color:#fff;font:600 16px/1.4 system-ui">
+  <tr><td style="padding:20px 24px;background:linear-gradient(135deg,#aec479,#7c9644);color:#0e110a;font:600 16px/1.4 system-ui">
     Greentrip Technologies — New %s submission
   </td></tr>
   <tr><td style="padding:20px 24px">

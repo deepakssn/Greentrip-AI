@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "email-hub-service"
+  },
+  "targets": {
+    "email-hub-service": {
+      "hosting": {
+        "greentripai": [
+          "greentripai-ai"
+        ],
+        "pro7ai": [
+          "pro7"
+        ],
+        "triyambaka": [
+          "triyambaka"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

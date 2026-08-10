@@ -5,7 +5,6 @@ export default function Logo({ className = "h-9 w-9" }: { className?: string }) 
         src="/gt-logo.png"
         alt="Greentrip Technologies logo"
         className="h-full w-full object-cover"
-        style={{ filter: "hue-rotate(125deg) saturate(170%) brightness(88%)" }}
       />
     </span>
   );
