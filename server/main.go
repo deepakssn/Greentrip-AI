@@ -112,10 +112,14 @@ func main() {
 	limiter := newRateLimiter(8, 10*time.Minute)
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/healthz", func(w http.ResponseWriter, _ *http.Request) {
+	// Cloud Run's frontend intercepts /healthz and never forwards it to the
+	// container, so /health is the probe path that actually works there.
+	health := func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		_, _ = w.Write([]byte("ok"))
-	})
+	}
+	mux.HandleFunc("/health", health)
+	mux.HandleFunc("/healthz", health)
 	mux.HandleFunc("/api/contact", func(w http.ResponseWriter, r *http.Request) {
 		handleContact(w, r, cfg, limiter)
 	})
