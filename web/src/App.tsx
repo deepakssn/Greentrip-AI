@@ -8,6 +8,7 @@ import Solutions from "./pages/Solutions";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
+import GTDoc from "./pages/GTDoc";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gtdoc" element={<GTDoc />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
