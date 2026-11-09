@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import type { PropsWithChildren, ReactNode } from "react";
 
 type Props = PropsWithChildren<{
@@ -21,11 +20,7 @@ export default function Section({
     <section className={`py-20 md:py-28 ${className}`}>
       <div className="container-app">
         {(eyebrow || title || description) && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <div
             className={`mb-14 ${align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-3xl"}`}
           >
             {eyebrow && <span className="chip mb-4">{eyebrow}</span>}
@@ -39,7 +34,7 @@ export default function Section({
                 {description}
               </p>
             )}
-          </motion.div>
+          </div>
         )}
         {children}
       </div>

@@ -87,8 +87,7 @@
       var(--grad-d) 72%,
       var(--grad-e) 100%
     );
-    background-size: 200% 100%;
-    animation: gradient-x 12s ease infinite;
+    background-size: 100% 100%;
   }
   .gradient-border {
     position: relative;

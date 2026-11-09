@@ -17,6 +17,8 @@ export default function Solutions() {
               <img
                 src={s.logo}
                 alt=""
+                width={480}
+                height={160}
                 className="h-9 w-auto mb-4 object-contain object-left"
               />
             )}

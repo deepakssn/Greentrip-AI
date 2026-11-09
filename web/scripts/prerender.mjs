@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -16,5 +16,10 @@ if (!html.includes(marker)) {
 if (preloads.length) {
   html = html.replace("</head>", `    ${preloads.join("\n    ")}\n  </head>`);
 }
+const cssName = readdirSync(resolve(root, "dist/assets")).find((name) => name.endsWith(".css"));
+if (!cssName) throw new Error("prerender: built CSS not found");
+const css = readFileSync(resolve(root, "dist/assets", cssName), "utf8").replace(/<\/style/gi, "<\\/style");
+if (!html.includes('rel="stylesheet"')) throw new Error("prerender: stylesheet link missing");
+html = html.replace(/<link rel="stylesheet"[^>]*>/, `<style>${css}</style>`);
 writeFileSync(htmlPath, html.replace(marker, `<div id="root">${appHtml}</div>`));
 console.log("prerendered / into dist/index.html");

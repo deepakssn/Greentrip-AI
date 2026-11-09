@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Cpu, Rocket, Shield, Sparkles, Zap } from "lucide-react";
 import Hero from "../components/Hero";
@@ -39,13 +38,9 @@ export default function Home() {
         description="Most AI projects stall at the proof-of-concept. We build the unglamorous parts that make AI durable in production."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((p, i) => (
-            <motion.div
+          {pillars.map((p) => (
+            <div
               key={p.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
               className="card gradient-border"
             >
               <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-violet flex items-center justify-center text-[#141810] shadow-glow">
@@ -55,7 +50,7 @@ export default function Home() {
                 {p.title}
               </h3>
               <p className="mt-2 text-sm text-fg-muted">{p.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
@@ -66,13 +61,9 @@ export default function Home() {
         description="From strategy to platforms, agents to vision — one team that owns the outcome."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.slice(0, 6).map((s, i) => (
-            <motion.div
+          {services.slice(0, 6).map((s) => (
+            <div
               key={s.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
               className="card"
             >
               <div className="h-10 w-10 rounded-lg bg-surface/5 border border-line/10 flex items-center justify-center text-accent-cyan">
@@ -82,7 +73,7 @@ export default function Home() {
                 {s.title}
               </h3>
               <p className="mt-2 text-sm text-fg-muted">{s.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
         <div className="mt-10 text-center">
@@ -105,6 +96,8 @@ export default function Home() {
                   <img
                     src={s.logo}
                     alt=""
+                    width={480}
+                    height={160}
                     className="h-8 w-auto mb-3 object-contain object-left"
                   />
                 )}

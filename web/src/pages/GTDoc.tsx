@@ -160,6 +160,8 @@ export default function GTDoc() {
             <img
               src="/gtdoc-logo.png"
               alt="GTDoc"
+              width={480}
+              height={160}
               className="mx-auto h-14 md:h-16 w-auto object-contain"
             />
             <span className="chip mt-6">
