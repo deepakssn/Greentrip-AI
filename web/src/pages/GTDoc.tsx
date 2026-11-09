@@ -157,16 +157,21 @@ export default function GTDoc() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mx-auto max-w-4xl text-center"
           >
-            <span className="chip">
+            <img
+              src="/gtdoc-logo.png"
+              alt="GTDoc"
+              className="mx-auto h-14 md:h-16 w-auto object-contain"
+            />
+            <span className="chip mt-6">
               <Sparkles size={14} className="text-accent-cyan" />
-              GTDoc · AI for dental clinics
+              AI for dental clinics
             </span>
             <h1 className="mt-6 font-display text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
               <span className="gradient-text">The AI-powered</span>
               <br />
-              <span className="text-white">dental clinic OS.</span>
+              <span className="text-fg">dental clinic OS.</span>
             </h1>
-            <p className="mt-6 mx-auto max-w-2xl text-lg text-slate-300">
+            <p className="mt-6 mx-auto max-w-2xl text-lg text-fg-muted">
               GTDoc runs your entire practice — patients, appointments,
               consultations, billing, pharmacy and reporting — in one intelligent
               platform, so your team spends less time on admin and more time on care.
@@ -199,13 +204,13 @@ export default function GTDoc() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
               className="card"
             >
-              <div className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-accent-cyan">
+              <div className="h-10 w-10 rounded-lg bg-surface/5 border border-line/10 flex items-center justify-center text-accent-cyan">
                 <f.icon size={18} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {f.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{f.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{f.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -234,13 +239,13 @@ export default function GTDoc() {
             },
           ].map((b) => (
             <div key={b.title} className="card gradient-border">
-              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-violet flex items-center justify-center text-ink-950 shadow-glow">
+              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-violet flex items-center justify-center text-[#141810] shadow-glow">
                 <b.icon size={20} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {b.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{b.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{b.desc}</p>
             </div>
           ))}
         </div>
@@ -254,10 +259,10 @@ export default function GTDoc() {
             <div className="relative grid gap-10 lg:grid-cols-2 items-center">
               <div>
                 <span className="chip"><Sparkles size={14} /> Early access</span>
-                <h2 className="mt-6 font-display text-3xl md:text-4xl font-bold text-white">
+                <h2 className="mt-6 font-display text-3xl md:text-4xl font-bold text-fg">
                   Interested? <span className="gradient-text">Get on the list.</span>
                 </h2>
-                <p className="mt-4 text-slate-300 max-w-md">
+                <p className="mt-4 text-fg-muted max-w-md">
                   Leave your email and phone number and our team will reach out with a
                   personalized GTDoc walkthrough for your clinic.
                 </p>
@@ -276,10 +281,10 @@ export default function GTDoc() {
                     <div className="mx-auto h-14 w-14 rounded-full bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
                       <CheckCircle2 size={28} />
                     </div>
-                    <h3 className="mt-4 font-display text-2xl font-semibold text-white">
+                    <h3 className="mt-4 font-display text-2xl font-semibold text-fg">
                       You're on the list
                     </h3>
-                    <p className="mt-2 text-slate-400">
+                    <p className="mt-2 text-fg-muted">
                       Thanks — we'll be in touch shortly to schedule your walkthrough.
                     </p>
                     <button
@@ -306,7 +311,7 @@ export default function GTDoc() {
                       <div>
                         <label className="label">Work email</label>
                         <div className="relative">
-                          <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                          <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-fg-subtle" />
                           <input
                             className="input pl-10"
                             type="email"
@@ -320,7 +325,7 @@ export default function GTDoc() {
                       <div>
                         <label className="label">Phone number</label>
                         <div className="relative">
-                          <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                          <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-fg-subtle" />
                           <input
                             className="input pl-10"
                             type="tel"
@@ -354,7 +359,7 @@ export default function GTDoc() {
                         </>
                       )}
                     </button>
-                    <p className="mt-3 text-xs text-slate-500">
+                    <p className="mt-3 text-xs text-fg-subtle">
                       We'll only use your details to contact you about GTDoc.
                     </p>
                   </>

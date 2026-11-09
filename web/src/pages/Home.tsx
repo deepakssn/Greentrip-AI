@@ -48,13 +48,13 @@ export default function Home() {
               transition={{ duration: 0.5, delay: i * 0.06 }}
               className="card gradient-border"
             >
-              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-violet flex items-center justify-center text-white shadow-glow">
+              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-brand-500 to-accent-violet flex items-center justify-center text-[#141810] shadow-glow">
                 <p.icon size={20} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{p.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{p.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -75,13 +75,13 @@ export default function Home() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className="card"
             >
-              <div className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-accent-cyan">
+              <div className="h-10 w-10 rounded-lg bg-surface/5 border border-line/10 flex items-center justify-center text-accent-cyan">
                 <s.icon size={18} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{s.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{s.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -98,19 +98,37 @@ export default function Home() {
         description="Accelerators we've shipped before — adapted to your data, brand and constraints."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.slice(0, 6).map((s) => (
-            <div key={s.title} className="card">
-              <div className="flex flex-wrap gap-2">
-                {s.tags.map((t) => (
-                  <span key={t} className="chip">{t}</span>
-                ))}
+          {solutions.slice(0, 6).map((s) => {
+            const inner = (
+              <>
+                {s.logo && (
+                  <img
+                    src={s.logo}
+                    alt=""
+                    className="h-8 w-auto mb-3 object-contain object-left"
+                  />
+                )}
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <span key={t} className="chip">{t}</span>
+                  ))}
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-fg">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm text-fg-muted">{s.desc}</p>
+              </>
+            );
+            return s.href ? (
+              <Link key={s.title} to={s.href} className="card block hover:bg-surface/[0.05]">
+                {inner}
+              </Link>
+            ) : (
+              <div key={s.title} className="card">
+                {inner}
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-white">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-400">{s.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
@@ -120,10 +138,10 @@ export default function Home() {
             <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-500/30 blur-3xl" />
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent-violet/30 blur-3xl" />
             <span className="chip"><Sparkles size={14} /> Let's build</span>
-            <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold text-white">
+            <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold text-fg">
               Have a problem worth <span className="gradient-text">automating?</span>
             </h2>
-            <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
+            <p className="mt-4 text-fg-muted max-w-2xl mx-auto">
               Tell us about your project. We'll respond within one business day with a
               recommended approach and ballpark timeline.
             </p>

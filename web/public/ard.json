@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:greentripai.com:site:overview",
+      "displayName": "Greentrip Technologies",
+      "type": "application/agent-skills+md",
+      "url": "https://greentripai.com/llms.txt",
+      "description": "Public overview of Greentrip Technologies: applied AI services, solution blueprints, and the GTDoc dental clinic product.",
+      "representativeQueries": [
+        "What does Greentrip Technologies do?",
+        "How do I contact Greentrip about an AI project?",
+        "What is GTDoc?"
+      ]
+    }
+  ]
+}

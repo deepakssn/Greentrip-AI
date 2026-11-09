@@ -14,16 +14,16 @@ export default function Services() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div key={s.title} className="card">
-              <div className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-accent-cyan">
+              <div className="h-10 w-10 rounded-lg bg-surface/5 border border-line/10 flex items-center justify-center text-accent-cyan">
                 <s.icon size={18} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{s.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{s.desc}</p>
               <ul className="mt-4 space-y-2">
                 {s.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2 text-sm text-slate-300">
+                  <li key={p} className="flex items-start gap-2 text-sm text-fg-muted">
                     <Check size={16} className="mt-0.5 text-accent-cyan" />
                     {p}
                   </li>
@@ -66,16 +66,16 @@ export default function Services() {
               className={`card relative ${p.featured ? "gradient-border" : ""}`}
             >
               {p.featured && (
-                <span className="absolute -top-3 left-6 chip bg-brand-500/20 border-brand-400/40 text-white">
+                <span className="absolute -top-3 left-6 chip bg-brand-500/20 border-brand-400/40 text-fg">
                   Most popular
                 </span>
               )}
-              <h3 className="font-display text-xl font-semibold text-white">{p.name}</h3>
-              <div className="mt-1 text-sm text-slate-400">{p.price}</div>
-              <p className="mt-4 text-sm text-slate-300">{p.desc}</p>
+              <h3 className="font-display text-xl font-semibold text-fg">{p.name}</h3>
+              <div className="mt-1 text-sm text-fg-muted">{p.price}</div>
+              <p className="mt-4 text-sm text-fg-muted">{p.desc}</p>
               <ul className="mt-5 space-y-2">
                 {p.perks.map((perk) => (
-                  <li key={perk} className="flex gap-2 text-sm text-slate-300">
+                  <li key={perk} className="flex gap-2 text-sm text-fg-muted">
                     <Check size={16} className="mt-0.5 text-accent-cyan" />
                     {perk}
                   </li>

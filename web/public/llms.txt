@@ -1,0 +1,19 @@
+# Greentrip Technologies
+
+> Greentrip Technologies designs, builds, and operates production AI systems for enterprises. The public site is https://greentripai.com. Contact support@greentripai.com.
+
+Greentrip is an applied AI consultancy. The marketing site describes services, solution blueprints, case studies, and GTDoc, an AI-powered dental clinic operating system.
+
+## Pages
+
+- [Home](https://greentripai.com/): What Greentrip Technologies builds and how engagements start.
+- [Services](https://greentripai.com/services): Agentic systems, LLM apps, RAG, computer vision, automation, predictive ML, MLOps, safety, and advisory.
+- [Solutions](https://greentripai.com/solutions): Deployable AI blueprints, including GTDoc.
+- [GTDoc](https://greentripai.com/gtdoc): AI dental clinic management product. Early access collects email and phone.
+- [Case studies](https://greentripai.com/case-studies): Illustrative engagement outcomes.
+- [About](https://greentripai.com/about): How the team works.
+- [Contact](https://greentripai.com/contact): Project, support, and help requests.
+
+## Contact
+
+- [Email support](mailto:support@greentripai.com): Sales, support, and partnership inquiries.

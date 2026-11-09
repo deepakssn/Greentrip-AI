@@ -15,10 +15,10 @@ export default function CaseStudies() {
               <span className="chip">{c.client}</span>
               <span className="font-mono text-xs text-accent-cyan">{c.metric}</span>
             </div>
-            <h3 className="mt-4 font-display text-xl font-semibold text-white">
+            <h3 className="mt-4 font-display text-xl font-semibold text-fg">
               {c.title}
             </h3>
-            <p className="mt-2 text-sm text-slate-400">{c.desc}</p>
+            <p className="mt-2 text-sm text-fg-muted">{c.desc}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {c.tags.map((t) => (
                 <span key={t} className="chip">{t}</span>

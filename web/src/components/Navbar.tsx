@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Home" },
@@ -31,14 +32,14 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all ${
         scrolled
-          ? "backdrop-blur-2xl bg-ink-950/70 border-b border-white/10"
+          ? "backdrop-blur-2xl bg-ink-950/70 border-b border-line/10"
           : "bg-transparent"
       }`}
     >
       <div className="container-app flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-3 group">
           <Logo className="h-9 w-9 transition-transform group-hover:rotate-6" />
-          <span className="font-display text-xl font-bold tracking-tight text-white">
+          <span className="font-display text-xl font-bold tracking-tight text-fg">
             Greentrip <span className="gradient-text">Technologies</span>
           </span>
         </Link>
@@ -52,8 +53,8 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `px-4 py-2 rounded-full text-sm transition ${
                   isActive
-                    ? "text-white bg-white/10"
-                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    ? "text-fg bg-surface/10"
+                    : "text-fg-muted hover:text-fg hover:bg-surface/5"
                 }`
               }
             >
@@ -62,23 +63,27 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Link to="/contact" className="btn-primary text-sm py-2.5">
             Get in touch
           </Link>
         </div>
 
-        <button
-          className="md:hidden text-slate-200 p-2"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
+            className="text-fg p-2"
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-line/10 bg-ink-950/95 backdrop-blur-xl">
           <div className="container-app py-4 flex flex-col gap-1">
             {links.map((l) => (
               <NavLink
@@ -88,8 +93,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `px-4 py-3 rounded-xl text-sm ${
                     isActive
-                      ? "text-white bg-white/10"
-                      : "text-slate-300 hover:bg-white/5"
+                      ? "text-fg bg-surface/10"
+                      : "text-fg-muted hover:bg-surface/5"
                   }`
                 }
               >

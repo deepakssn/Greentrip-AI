@@ -1,23 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "./fonts.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --ink-950: 244 246 238;
+    --ink-900: 238 241 228;
+    --ink-800: 228 232 214;
+    --ink-700: 213 220 196;
+    --ink-600: 197 206 176;
+    --fg: 26 31 20;
+    --fg-muted: 74 83 64;
+    --fg-subtle: 107 116 96;
+    --line: 26 31 20;
+    --surface: 26 31 20;
+    --page-glow-a: rgba(174, 196, 121, 0.28);
+    --page-glow-b: rgba(124, 150, 68, 0.16);
+    --page-base-a: #f4f6ee;
+    --page-base-b: #eef2e4;
+    --grad-a: #1a1f14;
+    --grad-b: #7c9644;
+    --grad-c: #aec479;
+    --grad-d: #c48a2a;
+    --grad-e: #1a1f14;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --ink-950: 9 11 7;
+    --ink-900: 14 17 10;
+    --ink-800: 20 24 16;
+    --ink-700: 29 35 23;
+    --ink-600: 40 48 30;
+    --fg: 255 255 255;
+    --fg-muted: 148 163 184;
+    --fg-subtle: 100 116 139;
+    --line: 255 255 255;
+    --surface: 255 255 255;
+    --page-glow-a: rgba(174, 196, 121, 0.20);
+    --page-glow-b: rgba(124, 150, 68, 0.16);
+    --page-base-a: #090b07;
+    --page-base-b: #0c0f09;
+    --grad-a: #ffffff;
+    --grad-b: #d5e4b6;
+    --grad-c: #aec479;
+    --grad-d: #e0b25a;
+    --grad-e: #ffffff;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-ink-950 text-slate-200 font-sans antialiased;
+    @apply bg-ink-950 text-fg-muted font-sans antialiased;
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, rgba(174, 196, 121, 0.20), transparent 60%),
-      radial-gradient(900px 500px at 0% 10%, rgba(124, 150, 68, 0.16), transparent 60%),
-      linear-gradient(180deg, #090b07 0%, #0c0f09 100%);
+      radial-gradient(1200px 600px at 80% -10%, var(--page-glow-a), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, var(--page-glow-b), transparent 60%),
+      linear-gradient(180deg, var(--page-base-a) 0%, var(--page-base-b) 100%);
     background-attachment: fixed;
   }
   ::selection {
-    @apply bg-brand-500/40 text-white;
+    @apply bg-brand-500/40 text-fg;
   }
 }
 
@@ -26,20 +72,20 @@
     @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
   }
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+    @apply bg-surface/[0.03] backdrop-blur-xl border border-line/10;
   }
   .glass-strong {
-    @apply bg-white/[0.06] backdrop-blur-2xl border border-white/15;
+    @apply bg-surface/[0.06] backdrop-blur-2xl border border-line/15;
   }
   .gradient-text {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
       90deg,
-      #ffffff 0%,
-      #d5e4b6 28%,
-      #aec479 50%,
-      #e0b25a 72%,
-      #ffffff 100%
+      var(--grad-a) 0%,
+      var(--grad-b) 28%,
+      var(--grad-c) 50%,
+      var(--grad-d) 72%,
+      var(--grad-e) 100%
     );
     background-size: 200% 100%;
     animation: gradient-x 12s ease infinite;
@@ -63,31 +109,32 @@
     pointer-events: none;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-ink-950 shadow-glow transition;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium shadow-glow transition;
+    color: #141810;
     background: linear-gradient(135deg, #aec479 0%, #97b158 100%);
   }
   .btn-primary:hover {
     @apply -translate-y-0.5 shadow-glowViolet;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-slate-200 border border-white/15 hover:bg-white/5 transition;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-fg border border-line/15 hover:bg-surface/5 transition;
   }
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-wider text-slate-300;
+    @apply inline-flex items-center gap-2 rounded-full border border-line/10 bg-surface/5 px-3 py-1 text-xs uppercase tracking-wider text-fg-muted;
   }
   .card {
-    @apply glass rounded-2xl p-6 transition hover:bg-white/[0.05] hover:-translate-y-1;
+    @apply glass rounded-2xl p-6 transition hover:bg-surface/[0.05] hover:-translate-y-1;
   }
   .input {
-    @apply w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3 text-slate-100 placeholder:text-slate-500 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30 transition;
+    @apply w-full rounded-xl bg-surface/[0.04] border border-line/10 px-4 py-3 text-fg placeholder:text-fg-subtle outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30 transition;
   }
   .label {
-    @apply block text-sm font-medium text-slate-300 mb-2;
+    @apply block text-sm font-medium text-fg-muted mb-2;
   }
   .grid-bg {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      linear-gradient(rgb(var(--line) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
   }

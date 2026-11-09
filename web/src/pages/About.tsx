@@ -35,13 +35,13 @@ export default function About() {
         <div className="grid gap-6 md:grid-cols-2">
           {values.map((v) => (
             <div key={v.title} className="card">
-              <div className="h-10 w-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-accent-cyan">
+              <div className="h-10 w-10 rounded-lg bg-surface/5 border border-line/10 flex items-center justify-center text-accent-cyan">
                 <v.icon size={18} />
               </div>
-              <h3 className="mt-5 font-display text-lg font-semibold text-white">
+              <h3 className="mt-5 font-display text-lg font-semibold text-fg">
                 {v.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{v.desc}</p>
+              <p className="mt-2 text-sm text-fg-muted">{v.desc}</p>
             </div>
           ))}
         </div>
@@ -60,8 +60,8 @@ export default function About() {
           ].map((s) => (
             <li key={s.n} className="card">
               <div className="font-mono text-xs text-accent-cyan">{s.n}</div>
-              <h3 className="mt-3 font-display text-lg font-semibold text-white">{s.t}</h3>
-              <p className="mt-2 text-sm text-slate-400">{s.d}</p>
+              <h3 className="mt-3 font-display text-lg font-semibold text-fg">{s.t}</h3>
+              <p className="mt-2 text-sm text-fg-muted">{s.d}</p>
             </li>
           ))}
         </ol>

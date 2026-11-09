@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -10,12 +9,7 @@ export default function Hero() {
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full bg-brand-500/20 blur-[120px] pointer-events-none" />
 
       <div className="container-app relative pt-20 pb-28 md:pt-28 md:pb-40">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto max-w-4xl text-center"
-        >
+        <div className="mx-auto max-w-4xl text-center">
           <span className="chip">
             <Sparkles size={14} className="text-accent-cyan" />
             Applied AI · Agents · LLMs · MLOps
@@ -23,9 +17,9 @@ export default function Hero() {
           <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">
             <span className="gradient-text">Ship intelligence.</span>
             <br />
-            <span className="text-white">Not just experiments.</span>
+            <span className="text-fg">Not just experiments.</span>
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-slate-300">
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-fg-muted">
             Greentrip Technologies partners with ambitious teams to design, build and operate
             production-grade AI — from autonomous agents and LLM apps to
             retrieval, computer vision and full MLOps platforms.
@@ -47,14 +41,14 @@ export default function Hero() {
               { k: "<200ms", v: "Avg. p95 latency" },
             ].map((s) => (
               <div key={s.v} className="glass rounded-2xl p-5">
-                <div className="font-display text-2xl md:text-3xl font-bold text-white">
+                <div className="font-display text-2xl md:text-3xl font-bold text-fg">
                   {s.k}
                 </div>
-                <div className="mt-1 text-xs text-slate-400">{s.v}</div>
+                <div className="mt-1 text-xs text-fg-muted">{s.v}</div>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

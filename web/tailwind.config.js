@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -10,12 +11,19 @@ export default {
       },
       colors: {
         ink: {
-          950: "#090b07",
-          900: "#0e110a",
-          800: "#141810",
-          700: "#1d2317",
-          600: "#28301e",
+          950: "rgb(var(--ink-950) / <alpha-value>)",
+          900: "rgb(var(--ink-900) / <alpha-value>)",
+          800: "rgb(var(--ink-800) / <alpha-value>)",
+          700: "rgb(var(--ink-700) / <alpha-value>)",
+          600: "rgb(var(--ink-600) / <alpha-value>)",
         },
+        fg: {
+          DEFAULT: "rgb(var(--fg) / <alpha-value>)",
+          muted: "rgb(var(--fg-muted) / <alpha-value>)",
+          subtle: "rgb(var(--fg-subtle) / <alpha-value>)",
+        },
+        line: "rgb(var(--line) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
         brand: {
           50: "#f5f8ee",
           100: "#e9f1d9",
@@ -37,9 +45,9 @@ export default {
       },
       backgroundImage: {
         "grid-fade":
-          "radial-gradient(circle at center, rgba(255,255,255,0.06) 1px, transparent 1px)",
+          "radial-gradient(circle at center, rgb(var(--line) / 0.06) 1px, transparent 1px)",
         "hero-glow":
-          "radial-gradient(60% 60% at 50% 0%, rgba(174,196,121,0.34) 0%, rgba(124,150,68,0.18) 35%, rgba(9,11,7,0) 75%)",
+          "radial-gradient(60% 60% at 50% 0%, rgba(174,196,121,0.34) 0%, rgba(124,150,68,0.18) 35%, transparent 75%)",
       },
       boxShadow: {
         glow: "0 0 60px -10px rgba(151,177,88,0.55)",

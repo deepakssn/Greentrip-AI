@@ -67,7 +67,22 @@ export const services = [
   },
 ];
 
-export const solutions = [
+export type Solution = {
+  title: string;
+  desc: string;
+  tags: string[];
+  href?: string;
+  logo?: string;
+};
+
+export const solutions: Solution[] = [
+  {
+    title: "GTDoc",
+    desc: "AI-powered dental clinic OS — patients, appointments, consultations, billing, pharmacy and reporting in one platform.",
+    tags: ["Healthcare", "Agents", "Clinic OS"],
+    href: "/gtdoc",
+    logo: "/gtdoc-logo.png",
+  },
   {
     title: "AI Customer Support Copilot",
     desc: "Cuts handle time 40%+ with a grounded, multilingual copilot that drafts replies, summarizes tickets, and escalates safely.",

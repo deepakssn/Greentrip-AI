@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Solutions from "./pages/Solutions";
-import About from "./pages/About";
-import CaseStudies from "./pages/CaseStudies";
-import Contact from "./pages/Contact";
-import GTDoc from "./pages/GTDoc";
-import NotFound from "./pages/NotFound";
+
+const Services = lazy(() => import("./pages/Services"));
+const Solutions = lazy(() => import("./pages/Solutions"));
+const About = lazy(() => import("./pages/About"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const Contact = lazy(() => import("./pages/Contact"));
+const GTDoc = lazy(() => import("./pages/GTDoc"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   return (
@@ -17,6 +19,7 @@ export default function App() {
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">
+        <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -27,6 +30,7 @@ export default function App() {
           <Route path="/gtdoc" element={<GTDoc />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

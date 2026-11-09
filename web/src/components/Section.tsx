@@ -30,12 +30,12 @@ export default function Section({
           >
             {eyebrow && <span className="chip mb-4">{eyebrow}</span>}
             {title && (
-              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white">
+              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-fg">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-4 text-slate-400 text-base md:text-lg">
+              <p className="mt-4 text-fg-muted text-base md:text-lg">
                 {description}
               </p>
             )}

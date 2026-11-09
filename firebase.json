@@ -77,6 +77,7 @@
       "cleanUrls": true,
       "trailingSlash": false,
       "rewrites": [
+        { "source": "/.well-known/ard.json", "destination": "/ard.json" },
         {
           "source": "/api/**",
           "run": { "serviceId": "pro7ai-api", "region": "us-central1" }

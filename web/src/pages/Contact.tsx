@@ -71,35 +71,35 @@ export default function Contact() {
       <div className="grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-2 space-y-6">
           <div className="card">
-            <div className="flex items-center gap-3 text-white">
+            <div className="flex items-center gap-3 text-fg">
               <Mail size={18} className="text-accent-cyan" />
               <span className="font-medium">Email</span>
             </div>
             <a
               href="mailto:support@greentripai.com"
-              className="mt-2 block text-slate-300 hover:text-white"
+              className="mt-2 block text-fg-muted hover:text-fg"
             >
               support@greentripai.com
             </a>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-1 text-xs text-fg-subtle">
               For sales, support and partnership inquiries.
             </p>
           </div>
           <div className="card">
-            <div className="flex items-center gap-3 text-white">
+            <div className="flex items-center gap-3 text-fg">
               <MapPin size={18} className="text-accent-cyan" />
               <span className="font-medium">Where we work</span>
             </div>
-            <p className="mt-2 text-slate-300">Remote-first, global delivery.</p>
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="mt-2 text-fg-muted">Remote-first, global delivery.</p>
+            <p className="mt-1 text-xs text-fg-subtle">
               Hubs across North America, Europe and Asia.
             </p>
           </div>
           <div className="card">
-            <h3 className="font-display text-lg font-semibold text-white">
+            <h3 className="font-display text-lg font-semibold text-fg">
               Prefer to keep it short?
             </h3>
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-fg-muted">
               Just drop your name, email and a one-liner. We'll reply with a few
               sharp questions to scope things.
             </p>
@@ -118,10 +118,10 @@ export default function Contact() {
               <div className="mx-auto h-14 w-14 rounded-full bg-accent-cyan/10 border border-accent-cyan/30 flex items-center justify-center text-accent-cyan">
                 <CheckCircle2 size={28} />
               </div>
-              <h3 className="mt-4 font-display text-2xl font-semibold text-white">
+              <h3 className="mt-4 font-display text-2xl font-semibold text-fg">
                 Message received
               </h3>
-              <p className="mt-2 text-slate-400">
+              <p className="mt-2 text-fg-muted">
                 Thanks {`— `}we'll be in touch at the email you provided within one business day.
               </p>
               <button
@@ -224,7 +224,7 @@ export default function Contact() {
               )}
 
               <div className="mt-6 flex items-center justify-between gap-4 flex-wrap">
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-fg-subtle">
                   By submitting you agree to be contacted at the email provided.
                 </p>
                 <button

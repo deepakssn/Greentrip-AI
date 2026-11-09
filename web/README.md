@@ -46,14 +46,15 @@ public/gt-logo.png       # brand mark rendered by Logo.tsx
 
 ## Theme
 
-Design tokens live in `tailwind.config.js`:
+Dark is the default. A sun/moon toggle in the navbar switches light/dark and persists the choice in `localStorage` (`theme`). A blocking script in `index.html` applies the class before paint so the page does not flash.
 
-- `brand.400` `#aec479` — primary green (`500`/`600` are the deeper shades used for buttons and glows)
+Semantic tokens (`fg`, `fg-muted`, `fg-subtle`, `line`, `surface`, `ink.*`) are CSS variables defined on `:root` (light) and `html.dark` (dark). Brand greens stay the same in both modes.
+
+- `brand.400` `#aec479` — primary green
 - `accent.cyan` `#5ec9b1` — teal detail accent
 - `accent.violet` `#e0b25a` — warm gold accent
-- `ink.*` — warm near-black surfaces, page background `#090b07`
 
-`accent.cyan` and `accent.violet` are historical key names — the hues no longer match the names. Recolor the token instead of renaming the key.
+`accent.cyan` and `accent.violet` are historical key names — the hues no longer match the names.
 
 Component classes (`src/index.css`): `.btn-primary`, `.btn-ghost`, `.card`, `.chip`, `.input`, `.label`, `.glass`, `.gradient-border`, `.grid-bg`, `gradient-text`.
 
